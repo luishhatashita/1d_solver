@@ -10,3 +10,9 @@ class array1d
         void printArray();
         ~array1d();
 };
+
+void printArray  (int n, double*& arr);
+void arrayZeros  (int n, double*& arr);
+void linSpace    (double xbegin, double xend, int n, double*& arr);
+void spacingArray(int n, double*& arrin, double*& arrout);
+void copyArray   (int n, double*& arrin, double*& arrout);

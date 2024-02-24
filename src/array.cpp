@@ -24,3 +24,48 @@ void array1d::printArray()
         cout << arr[i] << endl;
     } 
 }
+
+void printArray(int n, double*& arr)
+{
+    cout << "printArray" << endl;
+    for (int i=0; i<n; i++) {
+        cout << arr[i] << " , ";
+    } 
+    cout << endl;
+}
+
+void arrayZeros(int n, double*& arr) 
+{
+    cout << "arrayZeros" << endl;
+    allocate1d(n, arr);
+    for (int i=0; i<n; i++){
+        arr[i] = 0.0;
+    }
+}
+
+void linSpace(double xbegin, double xend, int n, double*& arr)
+{
+    cout << "linSpace" << endl;
+    double dx = (xend-xbegin)/(n-1);
+    allocate1d(n, arr);
+    for (int i=0; i<n; i++){
+        arr[i] = xbegin + i*dx;
+    }
+}
+
+void spacingArray(int n, double*& arrin, double*& arrout)
+{
+    cout << "spacingArray" << endl;
+    arrayZeros(n-1, arrout);
+    for (int i=0; i<(n-1); i++) {
+        arrout[i] = arrin[i+1] - arrin[i];
+    }
+}
+
+void copyArray(int n, double*& arrin, double*& arrout)
+{
+    cout << "copyArray" << endl;
+    for (int i=0; i<(n); i++) {
+        arrout[i] = arrin[i];
+    }
+}
